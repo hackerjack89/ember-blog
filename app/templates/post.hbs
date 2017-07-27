@@ -1,0 +1,8 @@
+<h1>Post page</h1>
+
+{{#each model as |post|}}
+  Title: {{post.title}}
+  <br>
+  Description: {{post.description}}
+{{/each}}
+{{outlet}}
