@@ -1,0 +1,14 @@
+<h1>Post page</h1>
+
+{{#link-to 'posts.new' class="btn btn-info"}}Create post{{/link-to}}
+
+<hr>
+
+{{#each model as |post|}}
+  {{#post-item item=post}}
+    {{#link-to 'posts.edit' post.id class="btn btn-success btn-xs"}}Edit{{/link-to}}
+      <button class="btn btn-danger btn-xs" {{action 'deletePost' post}}>Delete</button>
+    {{/post-item}}
+    <hr>
+
+{{/each}}

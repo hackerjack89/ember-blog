@@ -1,0 +1,14 @@
+<form>
+  <div class="form-group">
+    <label class="control-label" for="title"></label>
+    {{input type=text value=item.title class="form-control" placeholder="Enter title of post"}}
+    {{#if item.isValid}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
+  </div>
+  <div class="form-group">
+    <label class="control-label" for="description"></label>
+    {{input type="text" value=item.description class="form-control" placeholder="Enter description of post"}}
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-success" {{action 'buttonClicked' item}} disabled={{unless item.isValid true}}>{{buttonLabel}}</button>
+  </div>
+</form>
