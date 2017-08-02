@@ -6,9 +6,10 @@
   </div>
   <div class="form-group">
     <label class="control-label" for="description"></label>
-    {{input type="text" value=item.description class="form-control" placeholder="Enter description of post"}}
+    {{textarea value=item.description class="form-control" placeholder="Enter description of post" rows="7"}}
   </div>
   <div class="form-group">
     <button type="submit" class="btn btn-success" {{action 'buttonClicked' item}} disabled={{unless item.isValid true}}>{{buttonLabel}}</button>
+    {{#link-to 'posts' class="btn btn-primary"}}Back{{/link-to}}
   </div>
 </form>

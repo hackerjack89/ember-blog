@@ -4,11 +4,30 @@
 
 <hr>
 
-{{#each model as |post|}}
-  {{#post-item item=post}}
-    {{#link-to 'posts.edit' post.id class="btn btn-success btn-xs"}}Edit{{/link-to}}
-      <button class="btn btn-danger btn-xs" {{action 'deletePost' post}}>Delete</button>
-    {{/post-item}}
-    <hr>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>User</th>
+      <th>Comments Count</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
 
-{{/each}}
+  <tbody>
+    {{#each model as |post|}}
+      <tr>
+        <td>{{post.title}}</td>
+        <td>{{post.description}}</td>
+        <td>{{post.user.name}}</td>
+        <!-- <td>{{#link-to 'posts.show.comments' (query-params post_id=post.id)}}{{post.comments.length}}{{/link-to}}</td> -->
+        <td>{{post.comments.length}}</td>
+        <td><button class="btn btn-danger" {{action 'deletePost' post}}>Delete</button></td>
+        <td>{{#link-to 'posts.edit' post.id class="btn btn-success"}}Edit{{/link-to}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
+

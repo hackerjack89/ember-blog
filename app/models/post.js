@@ -6,6 +6,7 @@ export default DS.Model.extend({
   description: DS.attr('string'),
   published: DS.attr('boolean'),
   user: DS.belongsTo('user'),
+  comments: DS.hasMany('comment'),
 
   isValid: Ember.computed.notEmpty('title')
 });

@@ -1,15 +1,13 @@
 import ApplicationSerializer from './application';
 
 export default ApplicationSerializer.extend({
-
   attrs: {
-    firstName: 'first_name',
-    lastName: 'last_name'
+    post: 'post_id',
+    createdAt: 'created_at'
   },
 
   normalizeResponse(store, primaryModelClass, payload, id, requestType){
-    payload = {users: payload};
+    payload = {comments: payload};
     return this._super(store, primaryModelClass, payload, id, requestType);
-  }
-
+  },
 });
