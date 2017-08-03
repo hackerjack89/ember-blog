@@ -1,2 +1,15 @@
-<h2>This is post comments page</h2>
+<h2>Comments</h2>
+{{#each model as |comment|}}
+  {{comment.body}}
+  <br>
+  <hr>
+{{/each}}
+
+<br>
+
 {{outlet}}
+
+{{#unless addingComment}}
+  <button class="btn btn-info" {{action 'addComment'}}>Add Comment</button>
+{{/unless}}
+

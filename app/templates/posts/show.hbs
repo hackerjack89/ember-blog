@@ -3,5 +3,13 @@ Title: {{model.title}}
 Description: {{model.description}}
 <br>
 user: {{model.user.firstName}}
+<br>
+<br>
+<!-- {{#link-to 'posts.show.comments' class="btn btn-warning"}}Show comments{{/link-to}} -->
+{{#if commentsVisible}}
+  <button {{action "hideComments"}} class="btn btn-danger">Hide Comments</button>
+{{else}}
+  <button {{action "showComments"}} class="btn btn-success">Show Comments</button>
+{{/if}}
 
 {{outlet}}

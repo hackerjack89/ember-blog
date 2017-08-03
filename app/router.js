@@ -9,7 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('posts', function() {
     this.route('show', {path: '/:id'}, function() {
-      this.route('comments', {path: '/:post_id'}, function() {
+      this.route('comments', function(){
         this.route('new');
       });
     });
